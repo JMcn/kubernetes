@@ -73,7 +73,7 @@ var _ = Describe("Daemon set [Serial]", func() {
 
 	f = NewDefaultFramework("daemonsets")
 
-	image := "gcr.io/google_containers/serve_hostname:1.1"
+	image := "index.alauda.cn/googlecontainer/serve_hostname:1.1"
 	dsName := "daemon-set"
 
 	var ns string

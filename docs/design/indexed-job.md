@@ -733,7 +733,7 @@ spec:
     spec:
       containers:
         - name: c
-          image: gcr.io/google_containers/busybox
+          image: index.alauda.cn/googlecontainer/busybox
           command:
             - 'sh'
             - '-c'

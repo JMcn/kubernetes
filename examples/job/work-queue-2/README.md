@@ -181,8 +181,8 @@ your app image with your project ID, and push to GCR. Replace
 `<project>` with your project ID.
 
 ```
-docker tag job-wq-2 gcr.io/<project>/job-wq-2
-gcloud docker push gcr.io/<project>/job-wq-2
+docker tag job-wq-2 index.alauda.cn/<project>/job-wq-2
+gcloud docker push index.alauda.cn/<project>/job-wq-2
 ```
 
 ## Defining a Job
@@ -205,7 +205,7 @@ spec:
     spec:
       containers:
       - name: c
-        image: gcr.io/myproject/job-wq-2
+        image: index.alauda.cn/myproject/job-wq-2
       restartPolicy: OnFailure
 ```
 
@@ -213,7 +213,7 @@ spec:
 <!-- END MUNGE: EXAMPLE job.yaml -->
 
 Be sure to edit the job template to
-change `gcr.io/myproject` to your own path.
+change `index.alauda.cn/myproject` to your own path.
 
 In this example, each pod works on several items from the queue and then exits when there are no more items.
 Since the workers themselves detect when the workqueue is empty, and the Job controller does not
@@ -238,7 +238,7 @@ Now wait a bit, then check on the job.
 $ ./kubectl describe jobs/job-wq-2 
 Name:		job-wq-2
 Namespace:	default
-Image(s):	gcr.io/exampleproject/job-wq-2
+Image(s):	index.alauda.cn/exampleproject/job-wq-2
 Selector:	app in (job-wq-2)
 Parallelism:	2
 Completions:	Unset

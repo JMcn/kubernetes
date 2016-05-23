@@ -103,8 +103,8 @@ func TestJwtProvider(t *testing.T) {
 	keyring.Add(provider.Provide())
 
 	// Verify that we get the expected username/password combo for
-	// a gcr.io image name.
-	registryUrl := "gcr.io/foo/bar"
+	// a index.alauda.cn image name.
+	registryUrl := "index.alauda.cn/foo/bar"
 	creds, ok := keyring.Lookup(registryUrl)
 	if !ok {
 		t.Errorf("Didn't find expected URL: %s", registryUrl)

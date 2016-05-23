@@ -126,7 +126,7 @@ kubelet
       --oom-score-adj=-999: The oom-score-adj value for kubelet process. Values must be within the range [-1000, 1000]
       --outofdisk-transition-frequency=5m0s: Duration for which the kubelet has to wait before transitioning out of out-of-disk node condition status. Default: 5m0s
       --pod-cidr="": The CIDR to use for pod IP addresses, only used in standalone mode.  In cluster mode, this is obtained from the master.
-      --pod-infra-container-image="gcr.io/google_containers/pause:2.0": The image whose network/ipc namespaces containers in each pod will use.
+      --pod-infra-container-image="index.alauda.cn/googlecontainer/pause:2.0": The image whose network/ipc namespaces containers in each pod will use.
       --port=10250: The port for the Kubelet to serve on.
       --read-only-port=10255: The read-only port for the Kubelet to serve on with no authentication/authorization (set to 0 to disable)
       --really-crash-for-testing[=false]: If true, when panics occur crash. Intended for testing.

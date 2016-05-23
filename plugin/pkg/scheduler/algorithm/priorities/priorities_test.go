@@ -736,10 +736,10 @@ func TestImageLocalityPriority(t *testing.T) {
 	test_40_250 := api.PodSpec{
 		Containers: []api.Container{
 			{
-				Image: "gcr.io/40",
+				Image: "index.alauda.cn/40",
 			},
 			{
-				Image: "gcr.io/250",
+				Image: "index.alauda.cn/250",
 			},
 		},
 	}
@@ -747,10 +747,10 @@ func TestImageLocalityPriority(t *testing.T) {
 	test_40_140 := api.PodSpec{
 		Containers: []api.Container{
 			{
-				Image: "gcr.io/40",
+				Image: "index.alauda.cn/40",
 			},
 			{
-				Image: "gcr.io/140",
+				Image: "index.alauda.cn/140",
 			},
 		},
 	}
@@ -758,10 +758,10 @@ func TestImageLocalityPriority(t *testing.T) {
 	test_min_max := api.PodSpec{
 		Containers: []api.Container{
 			{
-				Image: "gcr.io/10",
+				Image: "index.alauda.cn/10",
 			},
 			{
-				Image: "gcr.io/2000",
+				Image: "index.alauda.cn/2000",
 			},
 		},
 	}
@@ -770,22 +770,22 @@ func TestImageLocalityPriority(t *testing.T) {
 		Images: []api.ContainerImage{
 			{
 				Names: []string{
-					"gcr.io/40",
-					"gcr.io/40:v1",
-					"gcr.io/40:v1",
+					"index.alauda.cn/40",
+					"index.alauda.cn/40:v1",
+					"index.alauda.cn/40:v1",
 				},
 				SizeBytes: int64(40 * mb),
 			},
 			{
 				Names: []string{
-					"gcr.io/140",
-					"gcr.io/140:v1",
+					"index.alauda.cn/140",
+					"index.alauda.cn/140:v1",
 				},
 				SizeBytes: int64(140 * mb),
 			},
 			{
 				Names: []string{
-					"gcr.io/2000",
+					"index.alauda.cn/2000",
 				},
 				SizeBytes: int64(2000 * mb),
 			},
@@ -796,14 +796,14 @@ func TestImageLocalityPriority(t *testing.T) {
 		Images: []api.ContainerImage{
 			{
 				Names: []string{
-					"gcr.io/250",
+					"index.alauda.cn/250",
 				},
 				SizeBytes: int64(250 * mb),
 			},
 			{
 				Names: []string{
-					"gcr.io/10",
-					"gcr.io/10:v1",
+					"index.alauda.cn/10",
+					"index.alauda.cn/10:v1",
 				},
 				SizeBytes: int64(10 * mb),
 			},
@@ -818,14 +818,14 @@ func TestImageLocalityPriority(t *testing.T) {
 		test         string
 	}{
 		{
-			// Pod: gcr.io/40 gcr.io/250
+			// Pod: index.alauda.cn/40 index.alauda.cn/250
 
 			// Node1
-			// Image: gcr.io/40 40MB
+			// Image: index.alauda.cn/40 40MB
 			// Score: (40M-23M)/97.7M + 1 = 1
 
 			// Node2
-			// Image: gcr.io/250 250MB
+			// Image: index.alauda.cn/250 250MB
 			// Score: (250M-23M)/97.7M + 1 = 3
 			pod:          &api.Pod{Spec: test_40_250},
 			nodes:        []api.Node{makeImageNode("machine1", node_40_140_2000), makeImageNode("machine2", node_250_10)},
@@ -833,10 +833,10 @@ func TestImageLocalityPriority(t *testing.T) {
 			test:         "two images spread on two nodes, prefer the larger image one",
 		},
 		{
-			// Pod: gcr.io/40 gcr.io/140
+			// Pod: index.alauda.cn/40 index.alauda.cn/140
 
 			// Node1
-			// Image: gcr.io/40 40MB, gcr.io/140 140MB
+			// Image: index.alauda.cn/40 40MB, index.alauda.cn/140 140MB
 			// Score: (40M+140M-23M)/97.7M + 1 = 2
 
 			// Node2
@@ -848,14 +848,14 @@ func TestImageLocalityPriority(t *testing.T) {
 			test:         "two images on one node, prefer this node",
 		},
 		{
-			// Pod: gcr.io/2000 gcr.io/10
+			// Pod: index.alauda.cn/2000 index.alauda.cn/10
 
 			// Node1
-			// Image: gcr.io/2000 2000MB
+			// Image: index.alauda.cn/2000 2000MB
 			// Score: 2000 > max score = 10
 
 			// Node2
-			// Image: gcr.io/10 10MB
+			// Image: index.alauda.cn/10 10MB
 			// Score: 10 < min score = 0
 			pod:          &api.Pod{Spec: test_min_max},
 			nodes:        []api.Node{makeImageNode("machine1", node_40_140_2000), makeImageNode("machine2", node_250_10)},

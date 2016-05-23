@@ -208,7 +208,7 @@ var _ = Describe("DaemonRestart [Disruptive]", func() {
 			Client:      framework.Client,
 			Name:        rcName,
 			Namespace:   ns,
-			Image:       "gcr.io/google_containers/pause:2.0",
+			Image:       "index.alauda.cn/googlecontainer/pause:2.0",
 			Replicas:    numPods,
 			CreatedPods: &[]*api.Pod{},
 		}

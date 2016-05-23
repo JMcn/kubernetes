@@ -18,9 +18,9 @@ IMAGE = kube-cross
 TAG = $(shell cat VERSION)
 
 build:
-	docker build -t gcr.io/google_containers/$(IMAGE):$(TAG) .
+	docker build -t index.alauda.cn/googlecontainer/$(IMAGE):$(TAG) .
 
 push:	build
-	gcloud docker --server=gcr.io push gcr.io/google_containers/$(IMAGE):$(TAG)
+	gcloud docker --server=index.alauda.cn push index.alauda.cn/googlecontainer/$(IMAGE):$(TAG)
 
 all:	push

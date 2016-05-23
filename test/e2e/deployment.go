@@ -41,7 +41,7 @@ import (
 const (
 	// nginxImage defined in kubectl.go
 	nginxImageName = "nginx"
-	redisImage     = "gcr.io/google_containers/redis:e2e"
+	redisImage     = "index.alauda.cn/googlecontainer/redis:e2e"
 	redisImageName = "redis"
 )
 
@@ -514,7 +514,7 @@ func testRolloverDeployment(f *Framework) {
 	// Create a deployment to delete nginx pods and instead bring up redis-slave pods.
 	deploymentName, deploymentImageName := "test-rollover-deployment", "redis-slave"
 	deploymentReplicas := 4
-	deploymentImage := "gcr.io/google_samples/gb-redisslave:v1"
+	deploymentImage := "index.alauda.cn/google_samples/gb-redisslave:v1"
 	deploymentStrategyType := extensions.RollingUpdateDeploymentStrategyType
 	Logf("Creating deployment %s", deploymentName)
 	newDeployment := newDeployment(deploymentName, deploymentReplicas, deploymentPodLabels, deploymentImageName, deploymentImage, deploymentStrategyType, nil)

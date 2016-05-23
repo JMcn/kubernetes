@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: etcd
-        image: gcr.io/google_containers/etcd-amd64:2.2.1
+        image: index.alauda.cn/googlecontainer/etcd-amd64:2.2.1
         resources:
           # keep request = limit to keep this container in guaranteed class
           limits:
@@ -44,7 +44,7 @@ spec:
         - name: etcd-storage
           mountPath: /var/etcd/data
       - name: kube2sky
-        image: gcr.io/google_containers/kube2sky:1.12
+        image: index.alauda.cn/googlecontainer/kube2sky:1.12
         resources:
           # keep request = limit to keep this container in guaranteed class
           limits:
@@ -57,7 +57,7 @@ spec:
         # command = "/kube2sky"
         - --domain={{ pillar['dns_domain'] }}
       - name: skydns
-        image: gcr.io/google_containers/skydns:2015-10-13-8c72f8c
+        image: index.alauda.cn/googlecontainer/skydns:2015-10-13-8c72f8c
         resources:
           # keep request = limit to keep this container in guaranteed class
           limits:
@@ -94,7 +94,7 @@ spec:
           initialDelaySeconds: 1
           timeoutSeconds: 5
       - name: healthz
-        image: gcr.io/google_containers/exechealthz:1.0
+        image: index.alauda.cn/googlecontainer/exechealthz:1.0
         resources:
           # keep request = limit to keep this container in guaranteed class
           limits:

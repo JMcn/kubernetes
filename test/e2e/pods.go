@@ -218,7 +218,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:  "test",
-						Image: "gcr.io/google_containers/pause:2.0",
+						Image: "index.alauda.cn/googlecontainer/pause:2.0",
 					},
 				},
 			},
@@ -243,7 +243,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:  "nginx",
-						Image: "gcr.io/google_containers/pause:2.0",
+						Image: "index.alauda.cn/googlecontainer/pause:2.0",
 						Resources: api.ResourceRequirements{
 							Limits: api.ResourceList{
 								api.ResourceCPU:    *resource.NewMilliQuantity(100, resource.DecimalSI),
@@ -280,7 +280,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:  "nginx",
-						Image: "gcr.io/google_containers/nginx:1.7.9",
+						Image: "index.alauda.cn/googlecontainer/nginx:1.7.9",
 						Ports: []api.ContainerPort{{ContainerPort: 80}},
 						LivenessProbe: &api.Probe{
 							Handler: api.Handler{
@@ -401,7 +401,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:  "nginx",
-						Image: "gcr.io/google_containers/nginx:1.7.9",
+						Image: "index.alauda.cn/googlecontainer/nginx:1.7.9",
 						Ports: []api.ContainerPort{{ContainerPort: 80}},
 						LivenessProbe: &api.Probe{
 							Handler: api.Handler{
@@ -487,7 +487,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:  "nginx",
-						Image: "gcr.io/google_containers/nginx:1.7.9",
+						Image: "index.alauda.cn/googlecontainer/nginx:1.7.9",
 						Ports: []api.ContainerPort{{ContainerPort: 80}},
 						LivenessProbe: &api.Probe{
 							Handler: api.Handler{
@@ -562,7 +562,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:  "srv",
-						Image: "gcr.io/google_containers/serve_hostname:1.1",
+						Image: "index.alauda.cn/googlecontainer/serve_hostname:1.1",
 						Ports: []api.ContainerPort{{ContainerPort: 9376}},
 					},
 				},
@@ -617,7 +617,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    "env3cont",
-						Image:   "gcr.io/google_containers/busybox:1.24",
+						Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 						Command: []string{"sh", "-c", "env"},
 					},
 				},
@@ -646,7 +646,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    "liveness",
-						Image:   "gcr.io/google_containers/busybox:1.24",
+						Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 						Command: []string{"/bin/sh", "-c", "echo ok >/tmp/health; sleep 10; rm -rf /tmp/health; sleep 600"},
 						LivenessProbe: &api.Probe{
 							Handler: api.Handler{
@@ -673,7 +673,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    "liveness",
-						Image:   "gcr.io/google_containers/busybox:1.24",
+						Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 						Command: []string{"/bin/sh", "-c", "echo ok >/tmp/health; sleep 600"},
 						LivenessProbe: &api.Probe{
 							Handler: api.Handler{
@@ -700,7 +700,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    "liveness",
-						Image:   "gcr.io/google_containers/liveness:e2e",
+						Image:   "index.alauda.cn/googlecontainer/liveness:e2e",
 						Command: []string{"/server"},
 						LivenessProbe: &api.Probe{
 							Handler: api.Handler{
@@ -729,7 +729,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    "liveness",
-						Image:   "gcr.io/google_containers/liveness:e2e",
+						Image:   "index.alauda.cn/googlecontainer/liveness:e2e",
 						Command: []string{"/server"},
 						LivenessProbe: &api.Probe{
 							Handler: api.Handler{
@@ -757,7 +757,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:  "liveness",
-						Image: "gcr.io/google_containers/nettest:1.7",
+						Image: "index.alauda.cn/googlecontainer/nettest:1.7",
 						// These args are garbage but the image will exit if they're not there
 						// we just care about /read serving a 200, which it always does.
 						Args: []string{
@@ -799,7 +799,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    "main",
-						Image:   "gcr.io/google_containers/busybox:1.24",
+						Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 						Command: []string{"/bin/sh", "-c", "echo container is alive; sleep 600"},
 					},
 				},
@@ -878,7 +878,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    "main",
-						Image:   "gcr.io/google_containers/busybox:1.24",
+						Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 						Command: []string{"/bin/sh", "-c", "echo container is alive; sleep 600"},
 					},
 				},
@@ -943,7 +943,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    containerName,
-						Image:   "gcr.io/google_containers/busybox:1.24",
+						Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 						Command: []string{"/bin/sh", "-c", "sleep 5", "/crash/missing"},
 					},
 				},
@@ -962,7 +962,7 @@ var _ = Describe("Pods", func() {
 		if err != nil {
 			Failf("failed to get pod: %v", err)
 		}
-		pod.Spec.Containers[0].Image = "gcr.io/google_containers/nginx:1.7.9"
+		pod.Spec.Containers[0].Image = "index.alauda.cn/googlecontainer/nginx:1.7.9"
 		pod, err = podClient.Update(pod)
 		if err != nil {
 			Failf("error updating pod=%s/%s %v", podName, containerName, err)
@@ -995,7 +995,7 @@ var _ = Describe("Pods", func() {
 				Containers: []api.Container{
 					{
 						Name:    containerName,
-						Image:   "gcr.io/google_containers/busybox:1.24",
+						Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 						Command: []string{"/bin/sh", "-c", "sleep 5", "/crash/missing"},
 					},
 				},
@@ -1071,7 +1071,7 @@ var _ = Describe("Pods", func() {
 					Containers: []api.Container{
 						{
 							Name:  "nginx",
-							Image: "gcr.io/google_containers/nginx:1.7.9",
+							Image: "index.alauda.cn/googlecontainer/nginx:1.7.9",
 						},
 					},
 				},
@@ -1145,7 +1145,7 @@ var _ = Describe("Pods", func() {
 					Containers: []api.Container{
 						{
 							Name:  "nginx",
-							Image: "gcr.io/google_containers/nginx:1.7.9",
+							Image: "index.alauda.cn/googlecontainer/nginx:1.7.9",
 							Ports: []api.Port{{ContainerPort: 80}},
 						},
 					},

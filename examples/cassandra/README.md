@@ -62,7 +62,7 @@ spec:
     resources:
       limits:
         cpu: "0.1"
-    image: gcr.io/google-samples/cassandra:v8
+    image: index.alauda.cn/google-samples/cassandra:v8
     name: cassandra
     ports:
     - name: cql
@@ -90,7 +90,7 @@ spec:
 <!-- END MUNGE: EXAMPLE cassandra.yaml -->
 
 There are a few things to note in this description.  First is that we are
-running the [```gcr.io/google-samples/cassandra:v8```](image/Dockerfile)
+running the [```index.alauda.cn/google-samples/cassandra:v8```](image/Dockerfile)
 image from Google's [container registry](https://cloud.google.com/container-registry/docs/).
 
 This is a standard Cassandra installation on top of Debian.  However it also
@@ -253,7 +253,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: gcr.io/google-samples/cassandra:v8
+          image: index.alauda.cn/google-samples/cassandra:v8
           name: cassandra
           ports:
             - containerPort: 9042
@@ -397,7 +397,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: gcr.io/google-samples/cassandra:v8
+          image: index.alauda.cn/google-samples/cassandra:v8
           name: cassandra
           ports:
             - containerPort: 9042

@@ -107,12 +107,12 @@ func newTestKubelet(t *testing.T) *TestKubelet {
 	fakeRuntime.ImageList = []kubecontainer.Image{
 		{
 			ID:       "abc",
-			RepoTags: []string{"gcr.io/google_containers:v1", "gcr.io/google_containers:v2"},
+			RepoTags: []string{"index.alauda.cn/googlecontainer:v1", "index.alauda.cn/googlecontainer:v2"},
 			Size:     123,
 		},
 		{
 			ID:       "efg",
-			RepoTags: []string{"gcr.io/google_containers:v3", "gcr.io/google_containers:v4"},
+			RepoTags: []string{"index.alauda.cn/googlecontainer:v3", "index.alauda.cn/googlecontainer:v4"},
 			Size:     456,
 		},
 	}
@@ -2728,11 +2728,11 @@ func TestUpdateNewNodeStatus(t *testing.T) {
 			},
 			Images: []api.ContainerImage{
 				{
-					Names:     []string{"gcr.io/google_containers:v1", "gcr.io/google_containers:v2"},
+					Names:     []string{"index.alauda.cn/googlecontainer:v1", "index.alauda.cn/googlecontainer:v2"},
 					SizeBytes: 123,
 				},
 				{
-					Names:     []string{"gcr.io/google_containers:v3", "gcr.io/google_containers:v4"},
+					Names:     []string{"index.alauda.cn/googlecontainer:v3", "index.alauda.cn/googlecontainer:v4"},
 					SizeBytes: 456,
 				},
 			},
@@ -2959,11 +2959,11 @@ func TestUpdateExistingNodeStatus(t *testing.T) {
 			},
 			Images: []api.ContainerImage{
 				{
-					Names:     []string{"gcr.io/google_containers:v1", "gcr.io/google_containers:v2"},
+					Names:     []string{"index.alauda.cn/googlecontainer:v1", "index.alauda.cn/googlecontainer:v2"},
 					SizeBytes: 123,
 				},
 				{
-					Names:     []string{"gcr.io/google_containers:v3", "gcr.io/google_containers:v4"},
+					Names:     []string{"index.alauda.cn/googlecontainer:v3", "index.alauda.cn/googlecontainer:v4"},
 					SizeBytes: 456,
 				},
 			},
@@ -3230,11 +3230,11 @@ func TestUpdateNodeStatusWithRuntimeStateError(t *testing.T) {
 			},
 			Images: []api.ContainerImage{
 				{
-					Names:     []string{"gcr.io/google_containers:v1", "gcr.io/google_containers:v2"},
+					Names:     []string{"index.alauda.cn/googlecontainer:v1", "index.alauda.cn/googlecontainer:v2"},
 					SizeBytes: 123,
 				},
 				{
-					Names:     []string{"gcr.io/google_containers:v3", "gcr.io/google_containers:v4"},
+					Names:     []string{"index.alauda.cn/googlecontainer:v3", "index.alauda.cn/googlecontainer:v4"},
 					SizeBytes: 456,
 				},
 			},

@@ -10,5 +10,5 @@ spec:
     spec:
       containers:
       - name: c
-        image: gcr.io/myproject/job-wq-2
+        image: index.alauda.cn/myproject/job-wq-2
       restartPolicy: OnFailure

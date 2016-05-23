@@ -45,7 +45,7 @@ var _ = Describe("Container Conformance Test", func() {
 			BeforeEach(func() {
 				terminateCase = ConformanceContainer{
 					Container: api.Container{
-						Image:           "gcr.io/google_containers/busybox:1.24",
+						Image:           "index.alauda.cn/googlecontainer/busybox:1.24",
 						Name:            "busybox",
 						Command:         []string{"sh", "-c", "env"},
 						ImagePullPolicy: api.PullIfNotPresent,

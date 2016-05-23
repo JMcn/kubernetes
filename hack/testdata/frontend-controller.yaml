@@ -27,7 +27,7 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: php-redis
-        image: gcr.io/google_samples/gb-frontend:v4
+        image: index.alauda.cn/google_samples/gb-frontend:v4
         resources:
           requests:
             cpu: 100m

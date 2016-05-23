@@ -21,7 +21,7 @@
 
 # This image does not tag in the normal way
 # TAG =
-PREFIX = gcr.io/google_containers
+PREFIX = index.alauda.cn/googlecontainer
 SUGGESTED_TAG = $(shell git rev-parse --verify HEAD)
 
 porter: porter.go

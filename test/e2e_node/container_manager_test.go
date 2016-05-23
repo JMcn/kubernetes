@@ -51,7 +51,7 @@ var _ = Describe("Kubelet Container Manager", func() {
 						RestartPolicy: api.RestartPolicyNever,
 						Containers: []api.Container{
 							{
-								Image:   "gcr.io/google_containers/busybox:1.24",
+								Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 								Name:    podName,
 								Command: []string{"/bin/false"},
 							},

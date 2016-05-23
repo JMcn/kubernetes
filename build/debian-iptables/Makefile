@@ -14,7 +14,7 @@
 
 .PHONY:	build push
 
-REGISTRY?="gcr.io/google_containers"
+REGISTRY?="index.alauda.cn/googlecontainer"
 IMAGE=debian-iptables
 TAG=v3
 ARCH?=amd64

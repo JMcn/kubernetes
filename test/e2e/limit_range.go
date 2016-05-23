@@ -175,7 +175,7 @@ func newTestPod(name string, requests api.ResourceList, limits api.ResourceList)
 			Containers: []api.Container{
 				{
 					Name:  "nginx",
-					Image: "gcr.io/google_containers/pause:2.0",
+					Image: "index.alauda.cn/googlecontainer/pause:2.0",
 					Resources: api.ResourceRequirements{
 						Requests: requests,
 						Limits:   limits,

@@ -10,7 +10,7 @@ this is an example of what to do if you want to package kubectl into a
 container/your pod.
 
 In the future, we may release consistently versioned groups of containers when
-we cut a release, in which case the source of gcr.io/google_containers/kubectl
+we cut a release, in which case the source of index.alauda.cn/googlecontainer/kubectl
 would become that automated process.
 
 ```pod.json``` is provided as an example of packaging kubectl as a sidecar

@@ -199,7 +199,7 @@ func testVolumeClient(client *client.Client, config VolumeTestConfig, volume api
 			Containers: []api.Container{
 				{
 					Name:  config.prefix + "-client",
-					Image: "gcr.io/google_containers/nginx:1.7.9",
+					Image: "index.alauda.cn/googlecontainer/nginx:1.7.9",
 					Ports: []api.ContainerPort{
 						{
 							Name:          "web",
@@ -293,7 +293,7 @@ func injectHtml(client *client.Client, config VolumeTestConfig, volume api.Volum
 			Containers: []api.Container{
 				{
 					Name:    config.prefix + "-injector",
-					Image:   "gcr.io/google_containers/busybox:1.24",
+					Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 					Command: []string{"/bin/sh"},
 					Args:    []string{"-c", "echo '" + content + "' > /mnt/index.html && chmod o+rX /mnt /mnt/index.html"},
 					VolumeMounts: []api.VolumeMount{
@@ -376,7 +376,7 @@ var _ = Describe("Volumes [Feature:Volumes]", func() {
 			config := VolumeTestConfig{
 				namespace:   namespace.Name,
 				prefix:      "nfs",
-				serverImage: "gcr.io/google_containers/volume-nfs:0.4",
+				serverImage: "index.alauda.cn/googlecontainer/volume-nfs:0.4",
 				serverPorts: []int{2049},
 			}
 
@@ -410,7 +410,7 @@ var _ = Describe("Volumes [Feature:Volumes]", func() {
 			config := VolumeTestConfig{
 				namespace:   namespace.Name,
 				prefix:      "gluster",
-				serverImage: "gcr.io/google_containers/volume-gluster:0.2",
+				serverImage: "index.alauda.cn/googlecontainer/volume-gluster:0.2",
 				serverPorts: []int{24007, 24008, 49152},
 			}
 
@@ -489,7 +489,7 @@ var _ = Describe("Volumes [Feature:Volumes]", func() {
 			config := VolumeTestConfig{
 				namespace:   namespace.Name,
 				prefix:      "iscsi",
-				serverImage: "gcr.io/google_containers/volume-iscsi:0.1",
+				serverImage: "index.alauda.cn/googlecontainer/volume-iscsi:0.1",
 				serverPorts: []int{3260},
 				volumes: map[string]string{
 					// iSCSI container needs to insert modules from the host
@@ -531,7 +531,7 @@ var _ = Describe("Volumes [Feature:Volumes]", func() {
 			config := VolumeTestConfig{
 				namespace:   namespace.Name,
 				prefix:      "rbd",
-				serverImage: "gcr.io/google_containers/volume-rbd:0.1",
+				serverImage: "index.alauda.cn/googlecontainer/volume-rbd:0.1",
 				serverPorts: []int{6789},
 				volumes: map[string]string{
 					// iSCSI container needs to insert modules from the host
@@ -604,7 +604,7 @@ var _ = Describe("Volumes [Feature:Volumes]", func() {
 			config := VolumeTestConfig{
 				namespace:   namespace.Name,
 				prefix:      "cephfs",
-				serverImage: "gcr.io/google_containers/volume-ceph:0.1",
+				serverImage: "index.alauda.cn/googlecontainer/volume-ceph:0.1",
 				serverPorts: []int{6789},
 			}
 

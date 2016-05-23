@@ -48,7 +48,7 @@ Custom metrics in Prometheus format are exposed on "/metrics" endpoint.
 
 ###CURL example
 ```console
-$ kubectl run resource-consumer --image=gcr.io/google_containers/resource_consumer:beta
+$ kubectl run resource-consumer --image=index.alauda.cn/googlecontainer/resource_consumer:beta
 $ kubectl expose rc resource-consumer --create-external-load-balancer=true --port=8080 --target-port=8080
 $ kubectl get services resource-consumer
 ```
@@ -63,7 +63,7 @@ $ curl --data "millicores=300&durationSec=600" http://104.197.103.250:8080/Consu
 
 ## Image
 
-Docker image of Resource Consumer can be found in Google Container Registry as gcr.io/google_containers/resource_consumer:beta
+Docker image of Resource Consumer can be found in Google Container Registry as index.alauda.cn/googlecontainer/resource_consumer:beta
 
 ## Use cases
 

@@ -58,7 +58,7 @@ import (
 var (
 	appPrefix         = "app"
 	pathPrefix        = "foo"
-	testImage         = "gcr.io/google_containers/n-way-http:1.0"
+	testImage         = "index.alauda.cn/googlecontainer/n-way-http:1.0"
 	httpContainerPort = 8080
 
 	expectedLBCreationTime    = 7 * time.Minute

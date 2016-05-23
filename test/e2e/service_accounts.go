@@ -196,14 +196,14 @@ var _ = Describe("ServiceAccounts", func() {
 				Containers: []api.Container{
 					{
 						Name:  "token-test",
-						Image: "gcr.io/google_containers/mounttest:0.2",
+						Image: "index.alauda.cn/googlecontainer/mounttest:0.2",
 						Args: []string{
 							fmt.Sprintf("--file_content=%s/%s", serviceaccount.DefaultAPITokenMountPath, api.ServiceAccountTokenKey),
 						},
 					},
 					{
 						Name:  "root-ca-test",
-						Image: "gcr.io/google_containers/mounttest:0.2",
+						Image: "index.alauda.cn/googlecontainer/mounttest:0.2",
 						Args: []string{
 							fmt.Sprintf("--file_content=%s/%s", serviceaccount.DefaultAPITokenMountPath, api.ServiceAccountRootCAKey),
 						},
@@ -217,7 +217,7 @@ var _ = Describe("ServiceAccounts", func() {
 		if supportsTokenNamespace {
 			pod.Spec.Containers = append(pod.Spec.Containers, api.Container{
 				Name:  "namespace-test",
-				Image: "gcr.io/google_containers/mounttest:0.2",
+				Image: "index.alauda.cn/googlecontainer/mounttest:0.2",
 				Args: []string{
 					fmt.Sprintf("--file_content=%s/%s", serviceaccount.DefaultAPITokenMountPath, api.ServiceAccountNamespaceKey),
 				},

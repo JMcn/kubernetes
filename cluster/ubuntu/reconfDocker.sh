@@ -26,7 +26,7 @@ fi
 function config_etcd {
   attempt=0
   while true; do
-    /opt/bin/etcdctl get /coreos.com/network/config
+    /opt/bin/etcdctl --no-sync get /coreos.com/network/config
     if [[ "$?" == 0 ]]; then
       break
     else
@@ -36,7 +36,7 @@ function config_etcd {
         exit 2
       fi
 
-      /opt/bin/etcdctl mk /coreos.com/network/config "{\"Network\":\"${FLANNEL_NET}\", \"Backend\": {\"Type\": \"vxlan\"}${FLANNEL_OTHER_NET_CONFIG}}"
+      /opt/bin/etcdctl --no-sync mk /coreos.com/network/config "{\"Network\":\"${FLANNEL_NET}\", \"Backend\": {\"Type\": \"vxlan\"}${FLANNEL_OTHER_NET_CONFIG}}"
       attempt=$((attempt+1))
       sleep 3
     fi

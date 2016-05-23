@@ -53,8 +53,8 @@ import (
 )
 
 const (
-	nautilusImage            = "gcr.io/google_containers/update-demo:nautilus"
-	kittenImage              = "gcr.io/google_containers/update-demo:kitten"
+	nautilusImage            = "index.alauda.cn/googlecontainer/update-demo:nautilus"
+	kittenImage              = "index.alauda.cn/googlecontainer/update-demo:kitten"
 	updateDemoSelector       = "name=update-demo"
 	updateDemoContainer      = "update-demo"
 	frontendSelector         = "app=guestbook,tier=frontend"
@@ -72,7 +72,7 @@ const (
 	nginxDefaultOutput       = "Welcome to nginx!"
 	simplePodPort            = 80
 	runJobTimeout            = 5 * time.Minute
-	nginxImage               = "gcr.io/google_containers/nginx:1.7.9"
+	nginxImage               = "index.alauda.cn/googlecontainer/nginx:1.7.9"
 )
 
 var (

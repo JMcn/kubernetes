@@ -45,7 +45,7 @@ spec:
     spec:
       containers:
       - name: php-redis
-        image: gcr.io/google_samples/gb-frontend:v3
+        image: index.alauda.cn/google_samples/gb-frontend:v3
         resources:
           requests:
             cpu: 100m
@@ -75,7 +75,7 @@ spec:
     spec:
       containers:
       - name: php-redis
-        image: gcr.io/google_samples/gb-frontend:v3
+        image: index.alauda.cn/google_samples/gb-frontend:v3
         resources:
           requests:
             cpu: 100m

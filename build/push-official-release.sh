@@ -36,7 +36,7 @@ KUBE_GCS_RELEASE_BUCKET='kubernetes-release'
 KUBE_GCS_RELEASE_PREFIX="release/${KUBE_RELEASE_VERSION}"
 KUBE_GCS_PUBLISH_VERSION="${KUBE_RELEASE_VERSION}"
 
-KUBE_DOCKER_REGISTRY="gcr.io/google_containers"
+KUBE_DOCKER_REGISTRY="index.alauda.cn/googlecontainer"
 KUBE_DOCKER_IMAGE_TAG="${KUBE_RELEASE_VERSION}"
 
 KUBE_ROOT="$(dirname "${BASH_SOURCE}")/.."
@@ -48,7 +48,7 @@ if "${KUBE_ROOT}/cluster/kubectl.sh" 'version' | grep 'Client' | grep 'dirty'; t
 fi
 
 if ! kube::release::has_gcloud_account k8s.production.user@gmail.com; then
-  kube::log::error "Pushing images to gcr.io/google_containers requires credentials for account k8s.production.user@gmail.com"
+  kube::log::error "Pushing images to index.alauda.cn/googlecontainer requires credentials for account k8s.production.user@gmail.com"
   return 1
 fi
 

@@ -93,7 +93,7 @@ var _ = Describe("Mesos", func() {
 				Containers: []api.Container{
 					{
 						Name:  podName,
-						Image: "beta.gcr.io/google_containers/pause:2.0",
+						Image: "beta.index.alauda.cn/googlecontainer/pause:2.0",
 					},
 				},
 			},

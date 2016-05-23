@@ -35,14 +35,14 @@ var _ = Describe("ReplicaSet", func() {
 	framework := NewDefaultFramework("replicaset")
 
 	It("should serve a basic image on each replica with a public image [Conformance]", func() {
-		ReplicaSetServeImageOrFail(framework, "basic", "gcr.io/google_containers/serve_hostname:1.1")
+		ReplicaSetServeImageOrFail(framework, "basic", "index.alauda.cn/googlecontainer/serve_hostname:1.1")
 	})
 
 	It("should serve a basic image on each replica with a private image", func() {
 		// requires private images
 		SkipUnlessProviderIs("gce", "gke")
 
-		ReplicaSetServeImageOrFail(framework, "private", "b.gcr.io/k8s_authenticated_test/serve_hostname:1.1")
+		ReplicaSetServeImageOrFail(framework, "private", "b.index.alauda.cn/k8s_authenticated_test/serve_hostname:1.1")
 	})
 })
 

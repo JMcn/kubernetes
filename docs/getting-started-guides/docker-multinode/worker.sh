@@ -197,7 +197,7 @@ start_k8s() {
         -v /:/rootfs:ro \
         -v /var/lib/docker/:/var/lib/docker:rw \
         -v /var/lib/kubelet/:/var/lib/kubelet:rw \
-        gcr.io/google_containers/hyperkube-${ARCH}:v${K8S_VERSION} \
+        index.alauda.cn/googlecontainer/hyperkube-${ARCH}:v${K8S_VERSION} \
         /hyperkube kubelet \
             --allow-privileged=true \
             --api-servers=http://${MASTER_IP}:8080 \
@@ -213,7 +213,7 @@ start_k8s() {
         --net=host \
         --privileged \
         --restart=on-failure \
-        gcr.io/google_containers/hyperkube-${ARCH}:v${K8S_VERSION} \
+        index.alauda.cn/googlecontainer/hyperkube-${ARCH}:v${K8S_VERSION} \
         /hyperkube proxy \
             --master=http://${MASTER_IP}:8080 \
             --v=2

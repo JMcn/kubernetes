@@ -407,7 +407,7 @@ type NodeConfig struct {
 	// included: * `https://www.googleapis.com/auth/compute` is required for
 	// mounting persistent storage on your nodes. *
 	// `https://www.googleapis.com/auth/devstorage.read_only` is required
-	// for communicating with *gcr.io*. If unspecified, no scopes are added.
+	// for communicating with *index.alauda.cn*. If unspecified, no scopes are added.
 	OauthScopes []string `json:"oauthScopes,omitempty"`
 
 	// ForceSendFields is a list of field names (e.g. "DiskSizeGb") to

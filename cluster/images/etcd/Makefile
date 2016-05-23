@@ -15,11 +15,11 @@
 # Build the etcd image
 #
 # Usage:
-# 	[TAG=2.2.1] [REGISTRY=gcr.io/google_containers] [ARCH=amd64] [BASEIMAGE=busybox] make (build|push)
+# 	[TAG=2.2.1] [REGISTRY=index.alauda.cn/googlecontainer] [ARCH=amd64] [BASEIMAGE=busybox] make (build|push)
 
 TAG?=2.2.1
 ARCH?=amd64
-REGISTRY?=gcr.io/google_containers
+REGISTRY?=index.alauda.cn/googlecontainer
 TEMP_DIR:=$(shell mktemp -d)
 
 # Default base images for different architectures

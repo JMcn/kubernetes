@@ -69,7 +69,7 @@ for ver in $VERSIONS; do
   docker run ${user_flags} \
     --rm -v "${TMP_IN_HOST}":/output:z \
     -v "${SWAGGER_PATH}":/swagger-source:z \
-    gcr.io/google_containers/gen-swagger-docs:v5 \
+    index.alauda.cn/googlecontainer/gen-swagger-docs:v5 \
     "${SWAGGER_JSON_NAME}" \
     "${REGISTER_FILE_URL}"
 done

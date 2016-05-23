@@ -16,7 +16,7 @@
 # This makefile assumes that the kubemark binary is present in this directory.
 
 all:
-	docker build -t gcr.io/$(PROJECT)/kubemark .
-	gcloud docker push gcr.io/$(PROJECT)/kubemark
+	docker build -t index.alauda.cn/$(PROJECT)/kubemark .
+	gcloud docker push index.alauda.cn/$(PROJECT)/kubemark
 
 .PHONY: all

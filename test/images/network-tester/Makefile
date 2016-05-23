@@ -13,7 +13,7 @@
 # limitations under the License.
 
 TAG = 1.8
-PREFIX = gcr.io/google_containers
+PREFIX = index.alauda.cn/googlecontainer
 
 all: push
 

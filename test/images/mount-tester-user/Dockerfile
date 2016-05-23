@@ -12,5 +12,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM gcr.io/google_containers/mounttest:0.6
+FROM index.alauda.cn/googlecontainer/mounttest:0.6
 USER 1001

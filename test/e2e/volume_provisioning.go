@@ -159,7 +159,7 @@ func runInPodWithVolume(c *client.Client, ns, claimName, command string) {
 			Containers: []api.Container{
 				{
 					Name:    "volume-tester",
-					Image:   "gcr.io/google_containers/busybox",
+					Image:   "index.alauda.cn/googlecontainer/busybox",
 					Command: []string{"/bin/sh"},
 					Args:    []string{"-c", command},
 					VolumeMounts: []api.VolumeMount{

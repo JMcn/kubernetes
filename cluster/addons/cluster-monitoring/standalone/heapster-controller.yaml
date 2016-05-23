@@ -27,7 +27,7 @@ spec:
         version: v1.0.2
     spec:
       containers:
-        - image: gcr.io/google_containers/heapster:v1.0.2
+        - image: index.alauda.cn/googlecontainer/heapster:v1.0.2
           name: heapster
           resources:
             # keep request = limit to keep this container in guaranteed class
@@ -41,7 +41,7 @@ spec:
             - /heapster
             - --source=kubernetes.summary_api:''
             - --metric_resolution=60s
-        - image: gcr.io/google_containers/addon-resizer:1.0
+        - image: index.alauda.cn/googlecontainer/addon-resizer:1.0
           name: heapster-nanny
           resources:
             limits:

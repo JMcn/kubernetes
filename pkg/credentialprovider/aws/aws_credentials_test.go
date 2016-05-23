@@ -59,7 +59,7 @@ func (p *testTokenGetter) GetAuthorizationToken(input *ecr.GetAuthorizationToken
 func TestEcrProvide(t *testing.T) {
 	registry := "123456789012.dkr.ecr.lala-land-1.amazonaws.com"
 	otherRegistries := []string{"private.registry.com",
-		"gcr.io",
+		"index.alauda.cn",
 	}
 	image := "foo/bar"
 

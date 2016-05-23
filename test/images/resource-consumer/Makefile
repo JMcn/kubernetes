@@ -13,7 +13,7 @@
 # limitations under the License.
 
 TAG = beta2
-PREFIX = gcr.io/google_containers
+PREFIX = index.alauda.cn/googlecontainer
 
 all: clean consumer
 

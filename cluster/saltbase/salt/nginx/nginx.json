@@ -7,7 +7,7 @@
 "containers":[
     {
     "name": "nginx",
-    "image": "gcr.io/google-containers/nginx:v1",
+    "image": "index.alauda.cn/google-containers/nginx:v1",
     "resources": {
       "limits": {
         "cpu": "200m"

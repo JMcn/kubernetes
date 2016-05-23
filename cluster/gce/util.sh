@@ -171,12 +171,12 @@ function set-preferred-region() {
   fi
 
   # If we're using regional GCR, and we're outside the US, go to the
-  # regional registry. The gcr.io/google_containers registry is
+  # regional registry. The index.alauda.cn/googlecontainer registry is
   # appropriate for US (for now).
   if [[ "${REGIONAL_KUBE_ADDONS}" == "true" ]] && [[ "${preferred}" != "us" ]]; then
-    KUBE_ADDON_REGISTRY="${preferred}.gcr.io/google_containers"
+    KUBE_ADDON_REGISTRY="${preferred}.index.alauda.cn/googlecontainer"
   else
-    KUBE_ADDON_REGISTRY="gcr.io/google_containers"
+    KUBE_ADDON_REGISTRY="index.alauda.cn/googlecontainer"
   fi
 }
 

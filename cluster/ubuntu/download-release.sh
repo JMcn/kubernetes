@@ -33,30 +33,39 @@ mkdir -p binaries/minion
 # flannel
 FLANNEL_VERSION=${FLANNEL_VERSION:-"0.5.5"}
 echo "Prepare flannel ${FLANNEL_VERSION} release ..."
-grep -q "^${FLANNEL_VERSION}\$" binaries/.flannel 2>/dev/null || {
-  curl -L  https://github.com/coreos/flannel/releases/download/v${FLANNEL_VERSION}/flannel-${FLANNEL_VERSION}-linux-amd64.tar.gz -o flannel.tar.gz
+#grep -q "^${FLANNEL_VERSION}\$" binaries/.flannel 2>/dev/null || {
+#  curl -L  https://github.com/coreos/flannel/releases/download/v${FLANNEL_VERSION}/flannel-${FLANNEL_VERSION}-linux-amd64.tar.gz -o flannel.tar.gz
+if [ ! -f flannel.tar.gz ] ; then
+    cp -p ../../../flannel.tar.gz flannel.tar.gz
+fi
   tar xzf flannel.tar.gz
   cp flannel-${FLANNEL_VERSION}/flanneld binaries/master
   cp flannel-${FLANNEL_VERSION}/flanneld binaries/minion
   echo ${FLANNEL_VERSION} > binaries/.flannel
-}
+#}
 
 # ectd
-ETCD_VERSION=${ETCD_VERSION:-"2.2.1"}
+ETCD_VERSION=${ETCD_VERSION:-"2.3.1"}
 ETCD="etcd-v${ETCD_VERSION}-linux-amd64"
 echo "Prepare etcd ${ETCD_VERSION} release ..."
-grep -q "^${ETCD_VERSION}\$" binaries/.etcd 2>/dev/null || {
-  curl -L https://github.com/coreos/etcd/releases/download/v${ETCD_VERSION}/${ETCD}.tar.gz -o etcd.tar.gz
+#grep -q "^${ETCD_VERSION}\$" binaries/.etcd 2>/dev/null || {
+#  curl -L https://github.com/coreos/etcd/releases/download/v${ETCD_VERSION}/${ETCD}.tar.gz -o etcd.tar.gz
+if [ ! -f etcd.tar.gz ] ; then
+  cp -p ../../../etcd.tar.gz etcd.tar.gz
+fi  
   tar xzf etcd.tar.gz
   cp ${ETCD}/etcd ${ETCD}/etcdctl binaries/master
   echo ${ETCD_VERSION} > binaries/.etcd
-}
+#}
 
 # k8s
-KUBE_VERSION=${KUBE_VERSION:-"1.1.8"}
+KUBE_VERSION=${KUBE_VERSION:-"1.2.4"}
 echo "Prepare kubernetes ${KUBE_VERSION} release ..."
-grep -q "^${KUBE_VERSION}\$" binaries/.kubernetes 2>/dev/null || {
-  curl -L https://github.com/kubernetes/kubernetes/releases/download/v${KUBE_VERSION}/kubernetes.tar.gz -o kubernetes.tar.gz
+#grep -q "^${KUBE_VERSION}\$" binaries/.kubernetes 2>/dev/null || {
+#  curl -L https://github.com/kubernetes/kubernetes/releases/download/v${KUBE_VERSION}/kubernetes.tar.gz -o kubernetes.tar.gz
+if [ ! -f kubernetes.tar.gz ] ; then
+  cp -p ../../../kubernetes.tar.gz kubernetes.tar.gz
+fi
   tar xzf kubernetes.tar.gz
   pushd kubernetes/server
   tar xzf kubernetes-server-linux-amd64.tar.gz
@@ -68,7 +77,7 @@ grep -q "^${KUBE_VERSION}\$" binaries/.kubernetes 2>/dev/null || {
      kubernetes/server/kubernetes/server/bin/kube-proxy binaries/minion
   cp kubernetes/server/kubernetes/server/bin/kubectl binaries/
   echo ${KUBE_VERSION} > binaries/.kubernetes
-}
+#}
 
 rm -rf flannel* kubernetes* etcd*
 

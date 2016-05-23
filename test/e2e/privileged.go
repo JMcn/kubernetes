@@ -37,7 +37,7 @@ const (
 	notPrivilegedHttpPort      = 9090
 	notPrivilegedUdpPort       = 9091
 	notPrivilegedContainerName = "not-privileged-container"
-	privilegedContainerImage   = "gcr.io/google_containers/netexec:1.4"
+	privilegedContainerImage   = "index.alauda.cn/googlecontainer/netexec:1.4"
 	privilegedCommand          = "ip link add dummy1 type dummy"
 )
 

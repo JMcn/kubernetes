@@ -104,28 +104,28 @@ kube::build::get_docker_wrapped_binaries() {
           kube-apiserver,busybox
           kube-controller-manager,busybox
           kube-scheduler,busybox
-          kube-proxy,gcr.io/google_containers/debian-iptables-amd64:v3
+          kube-proxy,index.alauda.cn/googlecontainer/debian-iptables-amd64:v3
         );;
     "arm")
         local targets=(
           kube-apiserver,hypriot/armhf-busybox
           kube-controller-manager,hypriot/armhf-busybox
           kube-scheduler,hypriot/armhf-busybox
-          kube-proxy,gcr.io/google_containers/debian-iptables-arm:v3
+          kube-proxy,index.alauda.cn/googlecontainer/debian-iptables-arm:v3
         );;
     "arm64")
         local targets=(
           kube-apiserver,aarch64/busybox
           kube-controller-manager,aarch64/busybox
           kube-scheduler,aarch64/busybox
-          kube-proxy,gcr.io/google_containers/debian-iptables-arm64:v3
+          kube-proxy,index.alauda.cn/googlecontainer/debian-iptables-arm64:v3
         );;
     "ppc64le")
         local targets=(
           kube-apiserver,ppc64le/busybox
           kube-controller-manager,ppc64le/busybox
           kube-scheduler,ppc64le/busybox
-          kube-proxy,gcr.io/google_containers/debian-iptables-ppc64le:v3
+          kube-proxy,index.alauda.cn/googlecontainer/debian-iptables-ppc64le:v3
         );;
   esac
 
@@ -134,8 +134,8 @@ kube::build::get_docker_wrapped_binaries() {
 
 # The set of addons images that should be prepopulated on linux/amd64
 readonly KUBE_ADDON_PATHS=(
-  gcr.io/google_containers/pause:2.0
-  gcr.io/google_containers/kube-registry-proxy:0.3
+  index.alauda.cn/googlecontainer/pause:2.0
+  index.alauda.cn/googlecontainer/kube-registry-proxy:0.3
 )
 
 # ---------------------------------------------------------------------------
@@ -838,10 +838,10 @@ function kube::release::create_docker_images_for_server() {
 
         if [[ ${arch} == "amd64" ]]; then
           # If we are building a amd64 docker image, preserve the original image name
-          local docker_image_tag=gcr.io/google_containers/${binary_name}:${md5_sum}
+          local docker_image_tag=index.alauda.cn/googlecontainer/${binary_name}:${md5_sum}
         else
           # If we are building a docker image for another architecture, append the arch in the image tag
-          local docker_image_tag=gcr.io/google_containers/${binary_name}-${arch}:${md5_sum}
+          local docker_image_tag=index.alauda.cn/googlecontainer/${binary_name}-${arch}:${md5_sum}
         fi
 
         "${DOCKER[@]}" build -q -t "${docker_image_tag}" ${docker_build_path} >/dev/null
@@ -1530,11 +1530,11 @@ function kube::release::docker::release() {
   )
 
   local docker_push_cmd=("${DOCKER[@]}")
-  if [[ "${KUBE_DOCKER_REGISTRY}" == "gcr.io/"* ]]; then
+  if [[ "${KUBE_DOCKER_REGISTRY}" == "index.alauda.cn/"* ]]; then
     docker_push_cmd=("gcloud" "docker")
   fi
 
-  if [[ "${KUBE_DOCKER_REGISTRY}" == "gcr.io/google_containers" ]]; then
+  if [[ "${KUBE_DOCKER_REGISTRY}" == "index.alauda.cn/googlecontainer" ]]; then
     # Activate credentials for the k8s.production.user@gmail.com
     gcloud config set account k8s.production.user@gmail.com
   fi
@@ -1562,7 +1562,7 @@ function kube::release::docker::release() {
       fi
     done
   done
-  if [[ "${KUBE_DOCKER_REGISTRY}" == "gcr.io/google_containers" ]]; then
+  if [[ "${KUBE_DOCKER_REGISTRY}" == "index.alauda.cn/googlecontainer" ]]; then
     # Activate default account
     gcloud config set account ${USER}@google.com
   fi

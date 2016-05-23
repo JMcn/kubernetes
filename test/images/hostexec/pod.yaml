@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: hostexec
-    image: gcr.io/google_containers/hostexec:1.2
+    image: index.alauda.cn/googlecontainer/hostexec:1.2
   securityContext:
     hostNetwork: true

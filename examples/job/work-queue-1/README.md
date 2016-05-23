@@ -225,8 +225,8 @@ your app image with your project ID, and push to GCR. Replace
 `<project>` with your project ID.
 
 ```
-docker tag job-wq-1 gcr.io/<project>/job-wq-1
-gcloud docker push gcr.io/<project>/job-wq-1
+docker tag job-wq-1 index.alauda.cn/<project>/job-wq-1
+gcloud docker push index.alauda.cn/<project>/job-wq-1
 ```
 
 ## Defining a Job
@@ -251,7 +251,7 @@ spec:
     spec:
       containers:
       - name: c
-        image: gcr.io/<project>/job-wq-1
+        image: index.alauda.cn/<project>/job-wq-1
       restartPolicy: OnFailure
 ```
 
@@ -276,7 +276,7 @@ Now wait a bit, then check on the job.
 $ ./kubectl describe jobs/job-wq-1 
 Name:		job-wq-1
 Namespace:	default
-Image(s):	gcr.io/causal-jigsaw-637/job-wq-1
+Image(s):	index.alauda.cn/causal-jigsaw-637/job-wq-1
 Selector:	app in (job-wq-1)
 Parallelism:	4
 Completions:	8

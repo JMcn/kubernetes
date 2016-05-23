@@ -29,8 +29,8 @@ import (
 )
 
 const (
-	testImageRootUid    = "gcr.io/google_containers/mounttest:0.5"
-	testImageNonRootUid = "gcr.io/google_containers/mounttest-user:0.3"
+	testImageRootUid    = "index.alauda.cn/googlecontainer/mounttest:0.5"
+	testImageNonRootUid = "index.alauda.cn/googlecontainer/mounttest-user:0.3"
 )
 
 var _ = Describe("EmptyDir volumes", func() {

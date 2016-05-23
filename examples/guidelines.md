@@ -67,7 +67,7 @@ Examples are not:
 * Docker images are pre-built, and source is contained in a subfolder.
   * Source is the Dockerfile and any custom files needed beyond the
     upstream app being packaged.
-  * Images are pushed to `gcr.io/google-samples`. Contact @jeffmendoza
+  * Images are pushed to `index.alauda.cn/google-samples`. Contact @jeffmendoza
     to have an image pushed
   * Images are tagged with a version (not latest) that is referenced
     in the example config.

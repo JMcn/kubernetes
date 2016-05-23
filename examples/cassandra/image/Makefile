@@ -24,9 +24,9 @@ kubernetes-cassandra.jar: ../java/* ../java/src/io/k8s/cassandra/*.java
 	cd ../java && mvn clean
 
 build: kubernetes-cassandra.jar
-	docker build -t gcr.io/google_samples/cassandra:${VERSION} .
+	docker build -t index.alauda.cn/google_samples/cassandra:${VERSION} .
 
 push: build
-	gcloud docker push gcr.io/google_samples/cassandra:${VERSION}
+	gcloud docker push index.alauda.cn/google_samples/cassandra:${VERSION}
 
 .PHONY: all build push

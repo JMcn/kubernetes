@@ -15,9 +15,9 @@
 # Build the hyperkube image.
 #
 # Usage:
-#   VERSION=v1.1.2 [REGISTRY="gcr.io/google_containers"] make build
+#   VERSION=v1.1.2 [REGISTRY="index.alauda.cn/googlecontainer"] make build
 
-REGISTRY?="gcr.io/google_containers"
+REGISTRY?="index.alauda.cn/googlecontainer"
 ARCH=amd64
 BASEIMAGE=debian:jessie
 TEMP_DIR:=$(shell mktemp -d)

@@ -30,7 +30,7 @@ spec:
         version: v1.0.2
     spec:
       containers:
-        - image: gcr.io/google_containers/heapster:v1.0.2
+        - image: index.alauda.cn/googlecontainer/heapster:v1.0.2
           name: heapster
           resources:
             # keep request = limit to keep this container in guaranteed class
@@ -49,7 +49,7 @@ spec:
             - name: ssl-certs
               mountPath: /etc/ssl/certs
               readOnly: true
-        - image: gcr.io/google_containers/heapster:v1.0.2
+        - image: index.alauda.cn/googlecontainer/heapster:v1.0.2
           name: eventer
           resources:
             # keep request = limit to keep this container in guaranteed class
@@ -67,7 +67,7 @@ spec:
             - name: ssl-certs
               mountPath: /etc/ssl/certs
               readOnly: true
-        - image: gcr.io/google_containers/addon-resizer:1.0
+        - image: index.alauda.cn/googlecontainer/addon-resizer:1.0
           name: heapster-nanny
           resources:
             limits:
@@ -95,7 +95,7 @@ spec:
             - --deployment=heapster-v1.0.2
             - --container=heapster
             - --poll-period=300000
-        - image: gcr.io/google_containers/addon-resizer:1.0
+        - image: index.alauda.cn/googlecontainer/addon-resizer:1.0
           name: eventer-nanny
           resources:
             limits:

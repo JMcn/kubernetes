@@ -58,7 +58,7 @@ var _ = Describe("Kubelet", func() {
 						RestartPolicy: api.RestartPolicyNever,
 						Containers: []api.Container{
 							{
-								Image:   "gcr.io/google_containers/busybox",
+								Image:   "index.alauda.cn/googlecontainer/busybox",
 								Name:    "busybox",
 								Command: []string{"echo", "'Hello World'"},
 							},
@@ -104,7 +104,7 @@ var _ = Describe("Kubelet", func() {
 						RestartPolicy: api.RestartPolicyNever,
 						Containers: []api.Container{
 							{
-								Image:   "gcr.io/google_containers/busybox",
+								Image:   "index.alauda.cn/googlecontainer/busybox",
 								Name:    "busybox",
 								Command: []string{"sh", "-c", "echo test > /file"},
 								SecurityContext: &api.SecurityContext{
@@ -149,7 +149,7 @@ var _ = Describe("Kubelet", func() {
 			for _, podName := range podNames {
 				createPod(cl, podName, []api.Container{
 					{
-						Image:   "gcr.io/google_containers/busybox",
+						Image:   "index.alauda.cn/googlecontainer/busybox",
 						Command: []string{"sh", "-c", "echo 'Hello World' | tee ~/file | tee /test-empty-dir-mnt | sleep 60"},
 						Name:    podName + containerSuffix,
 						VolumeMounts: []api.VolumeMount{

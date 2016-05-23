@@ -121,7 +121,7 @@ func makePods(c client.Interface, podCount int) {
 		Spec: api.PodSpec{
 			Containers: []api.Container{{
 				Name:  "pause",
-				Image: "gcr.io/google_containers/pause:1.0",
+				Image: "index.alauda.cn/googlecontainer/pause:1.0",
 				Resources: api.ResourceRequirements{
 					Limits: api.ResourceList{
 						api.ResourceCPU:    resource.MustParse("100m"),

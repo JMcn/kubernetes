@@ -7,6 +7,6 @@ metadata:
 spec:
   containers:
   - name: goproxy
-    image: gcr.io/google_containers/goproxy:0.1
+    image: index.alauda.cn/googlecontainer/goproxy:0.1
     ports:
     - containerPort: 8080

@@ -31,7 +31,7 @@ docker run \
   --net=host \
   --pid=host \
   --privileged=true \
-  -d gcr.io/google_containers/hyperkube-amd64:v${K8S_VERSION} \
+  -d index.alauda.cn/googlecontainer/hyperkube-amd64:v${K8S_VERSION} \
   /hyperkube kubelet \
     --containerized \
     --hostname-override="127.0.0.1" \

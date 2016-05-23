@@ -39,7 +39,7 @@ const (
 	timeoutRC                       = 120 * time.Second
 	startServiceTimeout             = time.Minute
 	startServiceInterval            = 5 * time.Second
-	resourceConsumerImage           = "gcr.io/google_containers/resource_consumer:beta2"
+	resourceConsumerImage           = "index.alauda.cn/googlecontainer/resource_consumer:beta2"
 	rcIsNil                         = "ERROR: replicationController = nil"
 	deploymentIsNil                 = "ERROR: deployment = nil"
 	rsIsNil                         = "ERROR: replicaset = nil"

@@ -100,8 +100,8 @@ function repo-contains-image() {
         prefix="registry.hub.docker.com/v2/repositories"
         tags_json=$(curl "https://registry.hub.docker.com/v2/repositories/${repo}/${image}/tags/${version}/" 2>/dev/null)
         tags_found="$(echo "${tags_json}" | jq ".v2?")"
-    elif [[ "${prefix}" == "gcr.io" ]]; then
-        tags_json=$(curl "https://gcr.io/v2/${repo}/${image}/tags/list" 2>/dev/null)
+    elif [[ "${prefix}" == "index.alauda.cn" ]]; then
+        tags_json=$(curl "https://index.alauda.cn/v2/${repo}/${image}/tags/list" 2>/dev/null)
         tags_found="$(echo "${tags_json}" | jq ".tags | indices([\"${version}\"]) | any")"
     fi
 
@@ -115,15 +115,15 @@ function repo-contains-image() {
 
 function ensure-hyperkube() {
     hyperkube="hyperkube-amd64"
-    official_image_tag="gcr.io/google_containers/${hyperkube}:${KUBE_GIT_VERSION}"
+    official_image_tag="index.alauda.cn/googlecontainer/${hyperkube}:${KUBE_GIT_VERSION}"
 
-    if repo-contains-image "gcr.io" "google_containers" "${hyperkube}" "${KUBE_GIT_VERSION}" ; then
-        echo "${hyperkube}:${KUBE_GIT_VERSION} was found in the gcr.io/google_containers repository"
+    if repo-contains-image "index.alauda.cn" "googlecontainer" "${hyperkube}" "${KUBE_GIT_VERSION}" ; then
+        echo "${hyperkube}:${KUBE_GIT_VERSION} was found in the index.alauda.cn/googlecontainer repository"
         export AZURE_HYPERKUBE_SPEC="${official_image_tag}"
         return 0
     fi
 
-    echo "${hyperkube}:${KUBE_GIT_VERSION} was not found in the gcr.io/google_containers repository"
+    echo "${hyperkube}:${KUBE_GIT_VERSION} was not found in the index.alauda.cn/googlecontainer repository"
     if [[ -z "${AZURE_DOCKER_REGISTRY:-}" || -z "${AZURE_DOCKER_REPO:-}" ]]; then
         echo "AZURE_DOCKER_REGISTRY and AZURE_DOCKER_REPO must be set in order to push ${hyperkube}:${KUBE_GIT_VERSION}"
         return 1
@@ -138,11 +138,11 @@ function ensure-hyperkube() {
     fi
 
     # should these steps tell them to just immediately tag it with the final user-specified repo?
-    # for now just stick with the assumption that `make release` will eventually tag a hyperkube image on gcr.io
+    # for now just stick with the assumption that `make release` will eventually tag a hyperkube image on index.alauda.cn
     # and then the existing code can re-tag that for the user's repo and then push
     if ! docker inspect "${user_image_tag}" ; then
         if ! docker inspect "${official_image_tag}" ; then
-            REGISTRY="gcr.io/google_containers" \
+            REGISTRY="index.alauda.cn/googlecontainer" \
             VERSION="${KUBE_GIT_VERSION}" \
             make -C "${KUBE_ROOT}/cluster/images/hyperkube" build
         fi

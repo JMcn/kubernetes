@@ -233,7 +233,7 @@ var _ = Describe("Density", func() {
 			expectNoError(err)
 			defer fileHndl.Close()
 			config := RCConfig{Client: c,
-				Image:                "gcr.io/google_containers/pause:2.0",
+				Image:                "index.alauda.cn/googlecontainer/pause:2.0",
 				Name:                 RCName,
 				Namespace:            ns,
 				PollInterval:         itArg.interval,
@@ -449,7 +449,7 @@ var _ = Describe("Density", func() {
 				}
 				for i := 1; i <= nodeCount; i++ {
 					name := additionalPodsPrefix + "-" + strconv.Itoa(i)
-					go createRunningPod(&wg, c, name, ns, "gcr.io/google_containers/pause:2.0", podLabels, cpuRequest, memRequest)
+					go createRunningPod(&wg, c, name, ns, "index.alauda.cn/googlecontainer/pause:2.0", podLabels, cpuRequest, memRequest)
 					time.Sleep(200 * time.Millisecond)
 				}
 				wg.Wait()

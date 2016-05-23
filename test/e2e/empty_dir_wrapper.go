@@ -65,7 +65,7 @@ var _ = Describe("EmptyDir wrapper volumes", func() {
 				Containers: []api.Container{
 					{
 						Name:            "git-repo",
-						Image:           "gcr.io/google_containers/fakegitserver:0.1",
+						Image:           "index.alauda.cn/googlecontainer/fakegitserver:0.1",
 						ImagePullPolicy: "IfNotPresent",
 						Ports: []api.ContainerPort{
 							{ContainerPort: containerPort},
@@ -134,7 +134,7 @@ var _ = Describe("EmptyDir wrapper volumes", func() {
 				Containers: []api.Container{
 					{
 						Name:  "secret-test",
-						Image: "gcr.io/google_containers/test-webserver:e2e",
+						Image: "index.alauda.cn/googlecontainer/test-webserver:e2e",
 						VolumeMounts: []api.VolumeMount{
 							{
 								Name:      volumeName,

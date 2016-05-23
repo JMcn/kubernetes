@@ -572,11 +572,11 @@ __EOF__
   kubectl delete node node-${version}-test
 
   ## kubectl edit can update the image field of a POD. tmp-editor.sh is a fake editor
-  echo -e '#!/bin/bash\nsed -i "s/nginx/gcr.io\/google_containers\/serve_hostname/g" $1' > /tmp/tmp-editor.sh
+  echo -e '#!/bin/bash\nsed -i "s/nginx/index.alauda.cn\/googlecontainer\/serve_hostname/g" $1' > /tmp/tmp-editor.sh
   chmod +x /tmp/tmp-editor.sh
   EDITOR=/tmp/tmp-editor.sh ${KUBE_OUTPUT_HOSTBIN}/kubectl edit "${kube_flags[@]}" pods/valid-pod
-  # Post-condition: valid-pod POD has image gcr.io/google_containers/serve_hostname
-  kube::test::get_object_assert pods "{{range.items}}{{$image_field}}:{{end}}" 'gcr.io/google_containers/serve_hostname:'
+  # Post-condition: valid-pod POD has image index.alauda.cn/googlecontainer/serve_hostname
+  kube::test::get_object_assert pods "{{range.items}}{{$image_field}}:{{end}}" 'index.alauda.cn/googlecontainer/serve_hostname:'
   # cleaning
   rm /tmp/tmp-editor.sh
   [ "$(EDITOR=cat kubectl edit pod/valid-pod 2>&1 | grep 'Edit cancelled')" ]

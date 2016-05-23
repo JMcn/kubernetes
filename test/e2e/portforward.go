@@ -47,7 +47,7 @@ func pfPod(expectedClientData, chunks, chunkSize, chunkIntervalMillis string) *a
 			Containers: []api.Container{
 				{
 					Name:  "portforwardtester",
-					Image: "gcr.io/google_containers/portforwardtester:1.0",
+					Image: "index.alauda.cn/googlecontainer/portforwardtester:1.0",
 					Env: []api.EnvVar{
 						{
 							Name:  "BIND_PORT",

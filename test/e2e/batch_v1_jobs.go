@@ -227,7 +227,7 @@ func newTestV1Job(behavior, name string, rPol api.RestartPolicy, parallelism, co
 					Containers: []api.Container{
 						{
 							Name:    "c",
-							Image:   "gcr.io/google_containers/busybox:1.24",
+							Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 							Command: []string{},
 							VolumeMounts: []api.VolumeMount{
 								{

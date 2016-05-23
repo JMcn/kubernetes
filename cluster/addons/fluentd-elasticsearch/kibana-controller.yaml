@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: kibana-logging
-        image: gcr.io/google_containers/kibana:1.3
+        image: index.alauda.cn/googlecontainer/kibana:1.3
         resources:
           # keep request = limit to keep this container in guaranteed class
           limits:

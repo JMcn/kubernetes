@@ -38,9 +38,9 @@ const (
 	cloudPlatformScopePrefix = "https://www.googleapis.com/auth/cloud-platform"
 )
 
-// For these urls, the parts of the host name can be glob, for example '*.gcr.io" will match
-// "foo.gcr.io" and "bar.gcr.io".
-var containerRegistryUrls = []string{"container.cloud.google.com", "gcr.io", "*.gcr.io"}
+// For these urls, the parts of the host name can be glob, for example '*.index.alauda.cn" will match
+// "foo.index.alauda.cn" and "bar.index.alauda.cn".
+var containerRegistryUrls = []string{"container.cloud.google.com", "index.alauda.cn", "*.index.alauda.cn"}
 
 var metadataHeader = &http.Header{
 	"Metadata-Flavor": []string{"Google"},

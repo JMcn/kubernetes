@@ -14,7 +14,7 @@
 
 # This image does not tag
 #TAG =
-PREFIX = gcr.io/google_containers
+PREFIX = index.alauda.cn/googlecontainer
 
 all: push
 

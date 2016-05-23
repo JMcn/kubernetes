@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # This file creates a standard build environment for building Kubernetes
-FROM gcr.io/google_containers/kube-cross:KUBE_BUILD_IMAGE_CROSS_TAG
+FROM index.alauda.cn/googlecontainer/kube-cross:KUBE_BUILD_IMAGE_CROSS_TAG
 
 ENV http_proxy=KUBE_BUILD_HTTP_PROXY \
   https_proxy=KUBE_BUILD_HTTPS_PROXY \

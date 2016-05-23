@@ -35,7 +35,7 @@ var _ = Describe("Ubernetes Lite", func() {
 	framework := NewDefaultFramework("ubernetes-lite")
 	var zoneCount int
 	var err error
-	image := "gcr.io/google_containers/serve_hostname:1.1"
+	image := "index.alauda.cn/googlecontainer/serve_hostname:1.1"
 	BeforeEach(func() {
 		if zoneCount <= 0 {
 			zoneCount, err = getZoneCount(framework.Client)
@@ -87,7 +87,7 @@ func SpreadServiceOrFail(f *Framework, replicaCount int, image string) {
 			Containers: []api.Container{
 				{
 					Name:  "test",
-					Image: "gcr.io/google_containers/pause:2.0",
+					Image: "index.alauda.cn/googlecontainer/pause:2.0",
 				},
 			},
 		},

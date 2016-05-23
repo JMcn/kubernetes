@@ -12,14 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Makefile for the Docker image gcr.io/google_containers/kube2sky
+# Makefile for the Docker image index.alauda.cn/googlecontainer/kube2sky
 # MAINTAINER: Tim Hockin <thockin@google.com>
 # If you update this image please bump the tag value before pushing.
 
 .PHONY: all kube2sky container push clean test
 
 TAG = 1.14
-PREFIX = gcr.io/google_containers
+PREFIX = index.alauda.cn/googlecontainer
 
 all: container
 

@@ -1048,7 +1048,7 @@ func createExecPodOrFail(c *client.Client, ns, name string) {
 			Containers: []api.Container{
 				{
 					Name:    "exec",
-					Image:   "gcr.io/google_containers/busybox:1.24",
+					Image:   "index.alauda.cn/googlecontainer/busybox:1.24",
 					Command: []string{"sh", "-c", "while true; do sleep 5; done"},
 				},
 			},
@@ -1077,7 +1077,7 @@ func createPodOrFail(c *client.Client, ns, name string, labels map[string]string
 			Containers: []api.Container{
 				{
 					Name:  "test",
-					Image: "gcr.io/google_containers/pause:2.0",
+					Image: "index.alauda.cn/googlecontainer/pause:2.0",
 					Ports: containerPorts,
 					// Add a dummy environment variable to work around a docker issue.
 					// https://github.com/docker/docker/issues/14203
@@ -1298,7 +1298,7 @@ func startServeHostnameService(c *client.Client, ns, name string, port, replicas
 	maxContainerFailures := 0
 	config := RCConfig{
 		Client:               c,
-		Image:                "gcr.io/google_containers/serve_hostname:1.1",
+		Image:                "index.alauda.cn/googlecontainer/serve_hostname:1.1",
 		Name:                 name,
 		Namespace:            ns,
 		PollInterval:         3 * time.Second,
@@ -1720,7 +1720,7 @@ func (j *ServiceTestJig) newRCTemplate(namespace string) *api.ReplicationControl
 					Containers: []api.Container{
 						{
 							Name:  "netexec",
-							Image: "gcr.io/google_containers/netexec:1.4",
+							Image: "index.alauda.cn/googlecontainer/netexec:1.4",
 							Args:  []string{"--http-port=80", "--udp-port=80"},
 							ReadinessProbe: &api.Probe{
 								PeriodSeconds: 3,
@@ -1828,7 +1828,7 @@ func NewServerTest(client *client.Client, namespace string, serviceName string) 
 	t.services = make(map[string]bool)
 
 	t.name = "webserver"
-	t.image = "gcr.io/google_containers/test-webserver:e2e"
+	t.image = "index.alauda.cn/googlecontainer/test-webserver:e2e"
 
 	return t
 }

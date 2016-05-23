@@ -15,7 +15,7 @@
 .PHONY: build push vet test clean
 
 TAG = 0.3
-REPO = gcr.io/google_containers/kube-registry-proxy
+REPO = index.alauda.cn/googlecontainer/kube-registry-proxy
 
 build:
 	docker build -t $(REPO):$(TAG) .

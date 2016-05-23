@@ -271,7 +271,7 @@ func ClusterLevelLoggingWithElasticsearch(f *Framework) {
 				Containers: []api.Container{
 					{
 						Name:  "synth-logger",
-						Image: "gcr.io/google_containers/ubuntu:14.04",
+						Image: "index.alauda.cn/googlecontainer/ubuntu:14.04",
 						// notice: the subshell syntax is escaped with `$$`
 						Command: []string{"bash", "-c", fmt.Sprintf("i=0; while ((i < %d)); do echo \"%d %s $i %s\"; i=$$(($i+1)); done", countTo, i, taintName, podName)},
 					},

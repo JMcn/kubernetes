@@ -21,8 +21,8 @@
 VERSION=v2
 
 all:
-	docker build -t gcr.io/google_containers/nginx:${VERSION} .
-	gcloud docker push gcr.io/google_containers/nginx:${VERSION}
+	docker build -t index.alauda.cn/googlecontainer/nginx:${VERSION} .
+	gcloud docker push index.alauda.cn/googlecontainer/nginx:${VERSION}
 
 .PHONY: all
 

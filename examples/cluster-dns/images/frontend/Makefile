@@ -13,7 +13,7 @@
 # limitations under the License.
 
 TAG = v1
-PREFIX = gcr.io/google_containers
+PREFIX = index.alauda.cn/googlecontainer
 IMAGE = example-dns-frontend
 
 all: push

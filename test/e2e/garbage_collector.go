@@ -92,7 +92,7 @@ func createTerminatingPod(f *Framework) (*api.Pod, error) {
 			Containers: []api.Container{
 				{
 					Name:  string(uuid),
-					Image: "gcr.io/google_containers/busybox:1.24",
+					Image: "index.alauda.cn/googlecontainer/busybox:1.24",
 				},
 			},
 		},

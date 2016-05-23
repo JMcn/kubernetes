@@ -17,11 +17,11 @@ all: push
 TAG = 0.7
 
 container:
-	docker build -t gcr.io/google_containers/kubekins-test .
-	docker tag gcr.io/google_containers/kubekins-test gcr.io/google_containers/kubekins-test:$(TAG)
+	docker build -t index.alauda.cn/googlecontainer/kubekins-test .
+	docker tag index.alauda.cn/googlecontainer/kubekins-test index.alauda.cn/googlecontainer/kubekins-test:$(TAG)
 
 push: container
-	gcloud docker push gcr.io/google_containers/kubekins-test # Push image tagged as latest to repository
-	gcloud docker push gcr.io/google_containers/kubekins-test:$(TAG) # Push version tagged image to repository (since this image is already pushed it will simply create or update version tag)
+	gcloud docker push index.alauda.cn/googlecontainer/kubekins-test # Push image tagged as latest to repository
+	gcloud docker push index.alauda.cn/googlecontainer/kubekins-test:$(TAG) # Push version tagged image to repository (since this image is already pushed it will simply create or update version tag)
 
 clean:

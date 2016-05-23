@@ -51,7 +51,7 @@ var _ = Describe("Generated release_1_2 clientset", func() {
 				Containers: []v1.Container{
 					{
 						Name:  "nginx",
-						Image: "gcr.io/google_containers/nginx:1.7.9",
+						Image: "index.alauda.cn/googlecontainer/nginx:1.7.9",
 						Ports: []v1.ContainerPort{{ContainerPort: 80}},
 						LivenessProbe: &v1.Probe{
 							Handler: v1.Handler{

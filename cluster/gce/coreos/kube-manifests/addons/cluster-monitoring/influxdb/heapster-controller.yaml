@@ -20,7 +20,7 @@ spec:
         kubernetes.io/cluster-service: "true"
     spec:
       containers:
-        - image: gcr.io/google_containers/heapster:v0.18.2
+        - image: index.alauda.cn/googlecontainer/heapster:v0.18.2
           name: heapster
           resources:
             limits:
