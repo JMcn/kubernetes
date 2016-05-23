@@ -75,11 +75,11 @@ export KUBELET_CONFIG=${KUBELET_CONFIG:-""}
 SERVICE_NODE_PORT_RANGE=${SERVICE_NODE_PORT_RANGE:-"30000-32767"}
 
 # Optional: Enable node logging.
-ENABLE_NODE_LOGGING="true"
+ENABLE_NODE_LOGGING=true
 LOGGING_DESTINATION=${LOGGING_DESTINATION:-elasticsearch}
 
 # Optional: When set to true, Elasticsearch and Kibana will be setup as part of the cluster bring up.
-ENABLE_CLUSTER_LOGGING="true"
+ENABLE_CLUSTER_LOGGING=true
 ELASTICSEARCH_LOGGING_REPLICAS=${ELASTICSEARCH_LOGGING_REPLICAS:-1}
 
 # Optional: When set to true, heapster, Influxdb and Grafana will be setup as part of the cluster bring up.
