@@ -77,6 +77,26 @@ function deploy_dashboard {
   echo
 }
 
+function deploy_ui {
+  echo "Deploying Kubernetes UI..."
+
+  KUBEUI=`eval "${KUBECTL} get services --namespace=kube-system | grep kube-ui | cat"`
+
+  if [ ! "$KUBEUI" ]; then
+    # use kubectl to create kube-ui rc and service
+    ${KUBECTL} --namespace=kube-system create \
+        -f ${KUBE_ROOT}/cluster/addons/kube-ui/kube-ui-rc.yaml
+    ${KUBECTL} --namespace=kube-system create \
+        -f ${KUBE_ROOT}/cluster/addons/kube-ui/kube-ui-svc.yaml
+
+    echo "Kube-ui rc and service is successfully deployed."
+  else
+    echo "Kube-ui rc and service is already deployed. Skipping."
+  fi
+
+  echo
+}
+
 init
 
 if [ "${ENABLE_CLUSTER_DNS}" == true ]; then
